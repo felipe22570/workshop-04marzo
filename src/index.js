@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import Header from "./components/Header";
 import AppRouter from "./routers/AppRouter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";

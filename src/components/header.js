@@ -2,6 +2,9 @@ import React from 'react'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import "../styles/styles.css"
 import Buscador from './Buscador'
+import foto1 from "../assets/images/bolsa-de-la-compra.png"
+import foto2 from "../assets/images/buscando.png"
+import foto3 from "../assets/images/perfil-del-usuario (1).png"
 const Header = () => {
   return (
     <div>
@@ -11,16 +14,12 @@ const Header = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="menu">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">Link</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-
-         
+        <Nav.Link ><img src={foto1} width={40}/></Nav.Link>
+        <Nav.Link><img src={foto2} width={40}/></Nav.Link>
+        <Nav.Link ><img src={foto3} width={40}/></Nav.Link>
+        <NavDropdown title="Lenguage" id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">ES</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">EN</NavDropdown.Item>
         </NavDropdown>
          
       </Nav>

@@ -1,0 +1,66 @@
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+* {margin: 0; padding: 0;}
+
+#formulario{
+    width: 80%;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+html {
+	height: 100%;
+
+}
+
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+
+#formulario #fieldset{
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10% 5% 10%;
+}
+
+
+button{
+	width: 100px;
+	background: black;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+    box-shadow: 5px 3px 6px darkslategrey;
+    border-radius: 5px;
+}
+
+
+input{
+   margin-bottom: 15px;
+   margin-left: 20px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+   width: 60%;
+   box-sizing: border-box;
+   color: #2C3E50;
+   font-size: 13px;
+}
+
+
+label{
+    width: 80px;
+    display: inline-block;
+   
+}

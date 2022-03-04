@@ -1,10 +1,9 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Agregar from "../components/AgregarProduct";
-import ListarProducto from "../components/ListarProducto";
 
 import Login from "../components/Login";
+import Principal from "../components/Principal";
 import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
@@ -39,7 +38,7 @@ const AppRouter = () => {
                }
             />
 
-            <Route path="/registro" element={<Agregar />} />
+            <Route path="/principal" element={<Principal />} />
          </Routes>
       </BrowserRouter>
    );
