@@ -1,12 +1,13 @@
-import { getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { google } from "../../firebase/firebaseConfig";
+import { typesLogin } from "../types/types";
 
 export const loginEmailPassword = (email, password) => {
    return (dispatch) => {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, email, password)
          .then(({ user }) => {
-            //  dispatch(loginSincrono(user.uid, user.displayName));
+            dispatch(loginSincrono(user.uid, user.displayName));
             console.log("Bienvenid@");
          })
          .catch((e) => {
@@ -20,7 +21,7 @@ export const loginGoogle = () => {
       const auth = getAuth();
       signInWithPopup(auth, google)
          .then(({ user }) => {
-            //  dispatch(loginSincrono(user.uid, user.displayName));
+            dispatch(loginSincrono(user.uid, user.displayName));
             console.log(`Bienvenid@ ${user.displayName}`);
          })
          .catch((e) => {
@@ -28,3 +29,26 @@ export const loginGoogle = () => {
          });
    };
 };
+
+export const loginSincrono = (id, displayname) => {
+   return {
+      type: typesLogin.login,
+      payload: {
+         id,
+         displayname,
+      },
+   };
+};
+
+// export const logout = () => {
+//    return (dispatch) => {
+//       const auth = getAuth();
+//       signOut(auth)
+//          .then((user) => {
+//             dispatch(logoutSincronico());
+//          })
+//          .catch((error) => {
+//             console.log(error);
+//          });
+//    };
+// };

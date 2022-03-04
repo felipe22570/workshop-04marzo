@@ -1,12 +1,44 @@
-import React from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ListarProducto from "../components/ListarProducto";
+
 import Login from "../components/Login";
+import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const [checking, setChecking] = useState(false);
+
+   useEffect(() => {
+      const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+         if (user?.uid) {
+            setIsLoggedIn(true);
+         } else {
+            setIsLoggedIn(false);
+         }
+         setChecking(false);
+      });
+   }, []);
+
+   if (checking) {
+      return <h1>Espere...</h1>;
+   }
+
    return (
       <BrowserRouter>
          <Routes>
-            <Route path="/" element={<Login />} />
+            <Route
+               path="/"
+               element={
+                  <PublicRoute isAuthenticated={isLoggedIn}>
+                     <Login />
+                  </PublicRoute>
+               }
+            />
+
+            <Route path="/registro" element={<ListarProducto />} />
          </Routes>
       </BrowserRouter>
    );

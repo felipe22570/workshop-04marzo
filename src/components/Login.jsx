@@ -1,11 +1,25 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { loginGoogle } from "../redux/actions/actionsLoginAsync";
+import { useForm } from "../helpers/useForm";
+import { loginEmailPassword, loginGoogle } from "../redux/actions/actionsLoginAsync";
 
 import { ButtonGoogle, ContLogin } from "../styles/loginStyle";
 
 const Login = () => {
    const dispatch = useDispatch();
+
+   const [values, handleInputChange] = useForm({
+      email: "",
+      password: "",
+   });
+
+   const { email, password } = values;
+
+   const handleLogin = (e) => {
+      e.preventDefault();
+      dispatch(loginEmailPassword(email, password));
+   };
+
    const handleGoogle = () => {
       dispatch(loginGoogle());
    };
@@ -13,9 +27,23 @@ const Login = () => {
    return (
       <ContLogin>
          <h1>Login</h1>
-         <form>
-            <input type="email" name="" id="" placeholder="Ingresa tu usuario" />
-            <input type="password" name="" id="" placeholder="Ingresa tu contraseña" />
+         <form onSubmit={handleLogin}>
+            <input
+               type="email"
+               name="email"
+               value={email}
+               onChange={handleInputChange}
+               id=""
+               placeholder="Ingresa tu usuario"
+            />
+            <input
+               type="password"
+               name="password"
+               value={password}
+               onChange={handleInputChange}
+               id=""
+               placeholder="Ingresa tu contraseña"
+            />
             <button type="submit">Enviar</button>
          </form>
          <ButtonGoogle onClick={handleGoogle}>
