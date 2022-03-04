@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Form, Image } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../hooks/useForm';
-import { addAsyn } from '../redux/actions/actionProducts';
-import { fileUploas } from '../helpers/FileUploas';
+import { addAsyn } from '../Redux/actions/actionProducts'
+import { fileUploas } from '../helpers/FileUploads';
 
 const Agregar = () => {
 
@@ -17,12 +17,12 @@ const Agregar = () => {
        imagen: ''
 
     })
-    const { nombre, codigo, descripcion, precio, foto } = values
+    const { nombre, codigo, precio, imagen } = values
 
     const handleSubmit =(e)=>{
         e.preventDefault()
         dispatch(addAsyn(values))
-        console.log(nombre, codigo, descripcion, precio, foto)
+        console.log(nombre, codigo, precio, imagen)
         reset()
     }
     const handleFileChange =(e)=>{
@@ -43,26 +43,22 @@ const Agregar = () => {
         <div>
           <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Nombre de la Planta</Form.Label>
-                    <Form.Control type="text" name="nombre" placeholder="Enter nombre" value={nombre} onChange={handleInputChange} />
-
-                    <Form.Label>Descripcion</Form.Label>
-                    <Form.Control type="text" name="descripcion" placeholder="Enter descripcion" value={descripcion} onChange={handleInputChange} />
+                    <Form.Label>Nombre del producto</Form.Label>
+                    <Form.Control type="text" name="nombre" placeholder="Ingresar nombre" value={nombre} onChange={handleInputChange} />
 
                     <Form.Label>Codigo</Form.Label>
                     <Form.Control type="text" name="codigo" placeholder="El codigo contine dos letras y 3 numeros" value={codigo} onChange={handleInputChange} />
 
                     <Form.Label>Precio</Form.Label>
-                    <Form.Control type="text" name="precio" placeholder="El precio en Pesos Colomb iano" value={precio} onChange={handleInputChange} />
+                    <Form.Control type="text" name="precio" placeholder="El precio en Pesos Colombiano" value={precio} onChange={handleInputChange} />
                 
-
                     <Form.Label>Imagen</Form.Label>
                     <Form.Control type="file" name="foto" placeholder="Ingrese Foto.jpg" onChange={handleFileChange} />
                 
                 </Form.Group>
 
                 <Button type="submit">
-                    <Image width={40} src='https://res.cloudinary.com/danimel/image/upload/v1646016294/anadir_eitgpy.png' />
+                    <Image width={40} src='https://cdn-icons-png.flaticon.com/512/117/117885.png' />
                 </Button>
              
             </Form>

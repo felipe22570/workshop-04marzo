@@ -51,10 +51,10 @@ export const listAsynProducts = () => {
   };
 };
 
-export const listProductSyn = (product) => {
+export const listProductSyn = (productos) => {
   return {
     type: typesProducts.list,
-    payload: product,
+    payload: productos,
   };
 };
 
