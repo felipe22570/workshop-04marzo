@@ -1,6 +1,7 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Agregar from "../components/AgregarProduct";
 import ListarProducto from "../components/ListarProducto";
 
 import Login from "../components/Login";
@@ -38,7 +39,7 @@ const AppRouter = () => {
                }
             />
 
-            <Route path="/registro" element={<ListarProducto />} />
+            <Route path="/registro" element={<Agregar />} />
          </Routes>
       </BrowserRouter>
    );
