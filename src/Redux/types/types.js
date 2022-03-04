@@ -3,6 +3,7 @@ export const typesProducts = {
    list: "list",
    edit: "edit",
    delete: "delete",
+   listSearch: "listSearch",
 };
 
 export const typesLogin = {

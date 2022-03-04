@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../components/Login";
 import Principal from "../components/Principal";
 import Registro from "../components/Registro";
+import Search from "../components/Search";
 import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
@@ -41,6 +42,7 @@ const AppRouter = () => {
 
             <Route path="/principal" element={<Principal />} />
             <Route path="/registro" element={<Registro />} />
+            <Route path="/buscar" element={<Search />} />
          </Routes>
       </BrowserRouter>
    );

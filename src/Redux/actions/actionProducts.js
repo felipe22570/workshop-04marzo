@@ -100,3 +100,25 @@ export const addSyn = (products) => {
       payload: products,
    };
 };
+
+export const listSearchAsyn = (searchText) => {
+   return async (dispatch) => {
+      const traerCollection = collection(db, "productos");
+      const q = query(traerCollection, where("nombre", "==", searchText));
+      const datosQ = await getDocs(q);
+      const productos = [];
+      datosQ.forEach((doc) => {
+         productos.push({
+            ...doc.data(),
+         });
+      });
+      dispatch(listSearchSyn(productos));
+   };
+};
+
+export const listSearchSyn = (productos) => {
+   return {
+      type: typesProducts.listSearch,
+      payload: productos,
+   };
+};
