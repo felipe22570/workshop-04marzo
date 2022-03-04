@@ -64,3 +64,9 @@ body {
     display: inline-block;
    
 }
+
+.equis{
+   position: absolute;
+   right: 5em;
+   top: 1em
+}

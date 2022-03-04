@@ -8,7 +8,8 @@ export const ContLogin = styled.div`
 
    width: 50%;
    margin: auto auto auto auto;
-  
+   box-shadow: 4px 4px 4px blanchedalmond;
+   border-radius: 15px ;
    gap: 40px;
    padding: 50px;
 
@@ -23,6 +24,7 @@ export const ContLogin = styled.div`
          height: 7vh;
          border: 1px solid #ccc;
          border-radius: 5px ;
+      padding: 1.5em;
       }
 
       button {

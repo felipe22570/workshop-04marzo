@@ -1,9 +1,12 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import salir from "../assets/images/eliminar.png"
+import "../styles/Form.css"
 const Registro = () => {
    return (
       <div>
          <div>
+         <Link className="equis" to="/"><img src={salir} width={15}/></Link>
             <form className="formulario" onSubmit="">
                <h2 className="fieldset">Registrate</h2>
                <div>

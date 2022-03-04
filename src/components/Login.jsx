@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { useForm } from "../helpers/useForm";
 import { loginEmailPassword, loginGoogle } from "../Redux/actions/actionsLoginAsync";
 
@@ -53,7 +54,10 @@ const Login = () => {
             />
             Ingresa con google
          </ButtonGoogle>
+         <Link to="/registro">Registrarse con correo</Link>
       </ContLogin>
+
+     
    );
 };
 

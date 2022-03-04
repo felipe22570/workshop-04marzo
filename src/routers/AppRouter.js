@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Login from "../components/Login";
 import Principal from "../components/Principal";
+import Registro from "../components/Registro";
+import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
@@ -37,8 +39,17 @@ const AppRouter = () => {
                   </PublicRoute>
                }
             />
+              <Route path="/registro" element={
+                    <PublicRoute isAuthenticated={isLoggedIn}>
+                    <Registro/>
+                    </PublicRoute> 
+                } />
 
-            <Route path="/principal" element={<Principal />} />
+            <Route path="/principal" element={
+               <PrivateRoute isAuthenticated={isLoggedIn}>
+                  <Principal />
+               </PrivateRoute>
+            } />
          </Routes>
       </BrowserRouter>
    );
