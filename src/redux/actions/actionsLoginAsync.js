@@ -40,15 +40,21 @@ export const loginSincrono = (id, displayname) => {
    };
 };
 
-// export const logout = () => {
-//    return (dispatch) => {
-//       const auth = getAuth();
-//       signOut(auth)
-//          .then((user) => {
-//             dispatch(logoutSincronico());
-//          })
-//          .catch((error) => {
-//             console.log(error);
-//          });
-//    };
-// };
+export const logoutAsync = () => {
+   return (dispatch) => {
+      const auth = getAuth();
+      signOut(auth)
+         .then((user) => {
+            dispatch(logoutSincronico());
+         })
+         .catch((error) => {
+            console.log(error);
+         });
+   };
+};
+
+export const logoutSincronico = () => {
+   return {
+      type: typesLogin.logout,
+   };
+};

@@ -1,7 +1,6 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import Login from "../components/Login";
 import Principal from "../components/Principal";
 import Registro from "../components/Registro";

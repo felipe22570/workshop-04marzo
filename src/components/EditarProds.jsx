@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useForm } from "../hooks/useForm";
 import { editAsyn } from "../Redux/actions/actionProducts";
 
-const EditarProds = ({ modal }) => {
+const EditarProd = ({ modal }) => {
    console.log(modal);
    const dispatch = useDispatch();
    const [show, setShow] = useState(true);
@@ -29,12 +29,12 @@ const EditarProds = ({ modal }) => {
          <>
             <Modal show={show} onHide={handleClose}>
                <Modal.Header closeButton>
-                  <Modal.Title>Editar Planta</Modal.Title>
+                  <Modal.Title>Editar Prenda</Modal.Title>
                </Modal.Header>
                <Modal.Body>
                   <Form onSubmit={handleSubmit}>
                      <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Nombre de la Planta</Form.Label>
+                        <Form.Label>Nombre de la prenda</Form.Label>
                         <Form.Control
                            type="text"
                            name="nombre"
@@ -65,7 +65,14 @@ const EditarProds = ({ modal }) => {
                      <Button variant="secondary" onClick={handleClose}>
                         Close
                      </Button>
-                     <Button type="submit" variant="primary" onClick={handleClose}>
+                     <Button
+                        type="submit"
+                        variant="primary"
+                        onClick={() => {
+                           handleClose();
+                           handleSubmit();
+                        }}
+                     >
                         Save Changes
                      </Button>
                   </Form>
@@ -76,4 +83,4 @@ const EditarProds = ({ modal }) => {
    );
 };
 
-export default EditarProds;
+export default EditarProd;

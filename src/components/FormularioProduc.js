@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fileUploas } from "../helpers/FileUploads";
 import { useForm } from "../helpers/useForm";
@@ -48,29 +48,54 @@ const FormularioProduc = () => {
                <h2 className="fieldset">Registra un Producto</h2>
                <div>
                   <label className="label">Código</label>
-                  <input className="input" name="codigo" value={codigo} onChange={handleInputChange} />
+                  <input
+                     className="input"
+                     name="codigo"
+                     value={codigo}
+                     onChange={handleInputChange}
+                  />
                </div>
                <div>
                   <label className="label">Nombre</label>
-                  <input className="input" type="text" name="nombre" value={nombre} onChange={handleInputChange} />
+                  <input
+                     className="input"
+                     type="text"
+                     name="nombre"
+                     value={nombre}
+                     onChange={handleInputChange}
+                  />
                </div>
 
                <div>
                   <label className="label">Precio</label>
-                  <input className="input" name="precio" value={precio} onChange={handleInputChange} />
+                  <input
+                     className="input"
+                     name="precio"
+                     value={precio}
+                     onChange={handleInputChange}
+                  />
                </div>
                <div>
                   <label className="label">Imagen</label>
-                  <input className="input" type="file" name="imagen" value={imagen} onChange={handleFileChange} />
+                  <input
+                     className="input"
+                     type="file"
+                     name="imagen"
+                     value={imagen}
+                     onChange={handleFileChange}
+                  />
                </div>
 
-               <label for="talla" className="label">Talla</label>
-               <select name="talla">
-                  <option>S</option>
-                  <option>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-               </select>
+               <div>
+                  <label for="talla">Talla</label>
+                  <input type="text" name="talla" value={talla} onChange={handleInputChange} />
+               </div>
+               {/* <select name="talla" onChange={handleInputChange}>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+               </select> */}
                <div>
                   <button className="btn" type="submit">
                      Enviar
