@@ -11,11 +11,11 @@ import {
 import { db } from "../../firebase/firebaseConfig";
 import { typesProducts } from "../types/types";
 
-//--- Editar ---//
+// Editar
 
 export const editAsyn = (codigo, producto) => {
   return async (dispatch) => {
-    const traerCollection = collection(db, "products");
+    const traerCollection = collection(db, "productos");
     const q = query(traerCollection, where("codigo", "==", codigo));
     const datosQ = await getDocs(q);
     let id;
@@ -24,7 +24,7 @@ export const editAsyn = (codigo, producto) => {
     });
     console.log(id);
 
-    const docRef = doc(db, "products", id);
+    const docRef = doc(db, "productos", id);
     await updateDoc(docRef, producto).then(() => listAsynProducts());
   };
 };
@@ -36,11 +36,11 @@ export const editSyn = (codigo, product) => {
   };
 };
 
-//--- Listar ---//
+// Listar
 
 export const listAsynProducts = () => {
   return async (dispatch) => {
-    const traerDatos = await getDocs(collection(db, "products"));
+    const traerDatos = await getDocs(collection(db, "productos"));
     const products = [];
     traerDatos.forEach((doc) => {
       products.push({
@@ -58,29 +58,28 @@ export const listProductSyn = (product) => {
   };
 };
 
-//--- Eliminar ---//
+// Eliminar
 
-export const deleteAsyn =(codigo)=>{
-    return async (dispatch)=>{
-        const traerCollection = collection(db, "products")
-        const q = query(traerCollection, where("codigo", "==", codigo))
-        const datosQ = await getDocs(q)
-        datosQ.forEach((docu =>{
-            deleteDoc(doc(db, "products", docu.id))
-        }))
-        dispatch(deleteSyn(codigo))
-    }
-}
+export const deleteAsyn = (codigo) => {
+  return async (dispatch) => {
+    const traerCollection = collection(db, "productos");
+    const q = query(traerCollection, where("codigo", "==", codigo));
+    const datosQ = await getDocs(q);
+    datosQ.forEach((docu) => {
+      deleteDoc(doc(db, "productos", docu.id));
+    });
+    dispatch(deleteSyn(codigo));
+  };
+};
 
-export const deleteSyn =(codigo)=>{
-    return{
-        type: typesProducts.delete,
-        payload: codigo
-    }
-}
+export const deleteSyn = (codigo) => {
+  return {
+    type: typesProducts.delete,
+    payload: codigo,
+  };
+};
 
-
-//--- Agregar nuevo producto ---//
+// Agregar nuevo producto
 
 export const addAsyn = (newProduct) => {
   return (dispatch) => {

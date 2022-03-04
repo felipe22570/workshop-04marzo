@@ -1,5 +1,3 @@
-
-
 export const typesProducts = {
     add: 'add',
     list: 'list',
