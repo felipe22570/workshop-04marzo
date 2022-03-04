@@ -65,12 +65,13 @@ const FormularioProduc = () => {
                </div>
 
                <label for="talla">Talla</label>
-               <select name="talla">
-                  <option>S</option>
-                  <option>M</option>
-                  <option>L</option>
-                  <option>XL</option>
-               </select>
+               <input type="text" name="talla" value={talla} onChange={handleInputChange} />
+               {/* <select name="talla" onChange={handleInputChange}>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+               </select> */}
                <div>
                   <button id="btn" type="submit">
                      Enviar

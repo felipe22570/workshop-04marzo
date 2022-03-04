@@ -29,12 +29,12 @@ const EditarProds = ({ modal }) => {
          <>
             <Modal show={show} onHide={handleClose}>
                <Modal.Header closeButton>
-                  <Modal.Title>Editar Planta</Modal.Title>
+                  <Modal.Title>Editar Prenda</Modal.Title>
                </Modal.Header>
                <Modal.Body>
                   <Form onSubmit={handleSubmit}>
                      <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Nombre de la Planta</Form.Label>
+                        <Form.Label>Nombre de la prenda</Form.Label>
                         <Form.Control
                            type="text"
                            name="nombre"

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Login from "../components/Login";
 import Principal from "../components/Principal";
+import Registro from "../components/Registro";
 import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
@@ -39,6 +40,7 @@ const AppRouter = () => {
             />
 
             <Route path="/principal" element={<Principal />} />
+            <Route path="/registro" element={<Registro />} />
          </Routes>
       </BrowserRouter>
    );

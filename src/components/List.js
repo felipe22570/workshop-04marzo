@@ -1,10 +1,23 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAsyn } from "../redux/actions/actionProducts";
 import "../styles/list.css";
+import EditarProds from "./EditarProds";
 const List = () => {
+   const dispatch = useDispatch();
    const { products } = useSelector((store) => store.producto);
+   const [modal, setModal] = useState(false);
+   const [enviarDatosModal, setEnviarDatosModal] = useState([]);
 
    //    const { nombre, codigo, precio, imagen, talla } = products;
+
+   const editar = (codigo) => {
+      console.log(codigo);
+      const traerElProducto = products.find((p) => p.codigo === codigo);
+
+      setModal(true);
+      setEnviarDatosModal(traerElProducto);
+   };
 
    return (
       <div>
@@ -30,12 +43,21 @@ const List = () => {
                      <td>{element.talla}</td>
                      <td>{element.precio}</td>
                      <td>
-                        <button className="button">Eliminar</button>
+                        <button onClick={() => editar(element.codigo)} className="button">
+                           Editar
+                        </button>
+                        <button
+                           className="button"
+                           onClick={() => dispatch(deleteAsyn(element.codigo))}
+                        >
+                           Eliminar
+                        </button>
                      </td>
                   </tr>
                ))}
             </tbody>
          </table>
+         {modal === true ? <EditarProds modal={enviarDatosModal} /> : ""}
       </div>
    );
 };
