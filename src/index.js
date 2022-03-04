@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from "./components/Header";
 import AppRouter from "./routers/AppRouter";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import FormularioProduc from "./components/FormularioProduc";
 ReactDOM.render(
    <React.StrictMode>
-      <AppRouter />
+      <FormularioProduc/>
    </React.StrictMode>,
    document.getElementById("root")
 );

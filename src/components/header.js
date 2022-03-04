@@ -1,15 +1,16 @@
 import React from 'react'
-import { Container, Navbar } from 'react-bootstrap'
-
-const header = () => {
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import "../styles/styles.css"
+import Buscador from './Buscador'
+const Header = () => {
   return (
     <div>
-<Navbar bg="light" expand="lg">
+<Navbar className="bg" expand="lg">
   <Container>
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+    <Navbar.Brand href="#home">SarsNOVA</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
+      <Nav className="menu">
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="#link">Link</Nav.Link>
         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -18,16 +19,19 @@ const header = () => {
           <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+
+         
         </NavDropdown>
+         
       </Nav>
     </Navbar.Collapse>
   </Container>
 </Navbar>
 
-
+<Buscador/>
 
     </div>
   )
 }
 
-export default header
+export default Header

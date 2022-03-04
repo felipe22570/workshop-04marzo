@@ -1,0 +1,39 @@
+.bg{
+background-color: blanchedalmond;
+}
+
+.busqueda input{
+    width: 100%;
+    font-size: 0.9em;
+    border: none;
+    background-color: white;
+    display: inline-block
+  }
+
+  .busqueda input:focus {
+    outline: none;
+  }
+
+  .form{
+      display: inline-block;
+
+  }
+
+  
+.busqueda{
+    background-image: url('../assets/images/lupa.png');
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 20px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    padding-left: 28px;
+    height: 45px;
+    border-radius: 10px;
+   
+    margin-left: 4em;
+    box-shadow: 2px 4px 2px gainsboro;
+    margin-top: 2em;
+
+}
