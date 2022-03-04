@@ -64,8 +64,10 @@ const FormularioProduc = () => {
                   <input type="file" name="imagen" value={imagen} onChange={handleFileChange} />
                </div>
 
-               <label for="talla">Talla</label>
-               <input type="text" name="talla" value={talla} onChange={handleInputChange} />
+               <div>
+                  <label for="talla">Talla</label>
+                  <input type="text" name="talla" value={talla} onChange={handleInputChange} />
+               </div>
                {/* <select name="talla" onChange={handleInputChange}>
                   <option value="S">S</option>
                   <option value="M">M</option>

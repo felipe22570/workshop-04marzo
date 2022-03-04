@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAsyn } from "../redux/actions/actionProducts";
 import "../styles/list.css";
-import EditarProds from "./EditarProds";
+import EditarProd from "./EditarProds";
+
 const List = () => {
    const dispatch = useDispatch();
    const { products } = useSelector((store) => store.producto);
@@ -57,7 +58,7 @@ const List = () => {
                ))}
             </tbody>
          </table>
-         {modal === true ? <EditarProds modal={enviarDatosModal} /> : ""}
+         {modal === true ? <EditarProd modal={enviarDatosModal} /> : ""}
       </div>
    );
 };
