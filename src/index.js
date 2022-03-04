@@ -4,9 +4,11 @@ import Header from "./components/Header";
 import AppRouter from "./routers/AppRouter";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormularioProduc from "./components/FormularioProduc";
+import Principal from "./components/Principal";
+import Registro from "./components/Registro";
 ReactDOM.render(
    <React.StrictMode>
-      <FormularioProduc/>
+      <Principal/>
    </React.StrictMode>,
    document.getElementById("root")
 );
