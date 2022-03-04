@@ -1,10 +1,10 @@
-import { typesPlantas } from "../types/types";
+import { typesProducts } from "../types/types";
 
 const initialState = {
     products: []
 }
 
-export const plantasReducers = (state = initialState, action) => {
+export const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case typesProducts.add:
             return {

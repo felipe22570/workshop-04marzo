@@ -41,13 +41,13 @@ export const editSyn = (codigo, product) => {
 export const listAsynProducts = () => {
   return async (dispatch) => {
     const traerDatos = await getDocs(collection(db, "productos"));
-    const products = [];
+    const productos = [];
     traerDatos.forEach((doc) => {
-      products.push({
+      productos.push({
         ...doc.data(),
       });
     });
-    dispatch(listProductSyn(products));
+    dispatch(listProductSyn(productos));
   };
 };
 

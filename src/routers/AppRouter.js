@@ -1,15 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PruListar from '../components/PruListar'
+// import Agregar from "../components/AgregarProduct";
+import FormularioProduc from "../components/FormularioProduc";
 
 const AppRouter = () => {
-   return (
-      <BrowserRouter>
-         <Routes>
-            <Route path="/listar" element={<PruListar />} />
-         </Routes>
-      </BrowserRouter>
-   )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/Agregar" element={<FormularioProduc />} />
+        {/* <Route path="/AgregarProd" element={<Agregar/>} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default AppRouter;
