@@ -1,16 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import Header from "./components/Header";
 import AppRouter from "./routers/AppRouter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
-import { store } from "./Redux/store/store"
+import { store } from "./Redux/store/store";
 // import FormularioProduc from "./components/FormularioProduc";
 ReactDOM.render(
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>,
-  document.getElementById("root")
+   <Provider store={store}>
+      <AppRouter />
+   </Provider>,
+   document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

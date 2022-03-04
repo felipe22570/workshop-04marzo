@@ -1,4 +1,4 @@
-export const fileUpload = async (file) => {
+export const fileUploas = async (file) => {
   const cloudUrl = "https://api.Cloudinary.com/v1_1/dilwbkj5s/image/upload";
   const formData = new FormData();
   formData.append("upload_preset", "EjercicioCRUD");

@@ -1,19 +1,47 @@
-import React from "react";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Agregar from "../components/AgregarProduct";
-import FormularioProduc from "../components/FormularioProduc";
-import ListarProd from "../components/ListarProducto";
+
+import Login from "../components/Login";
+import Principal from "../components/Principal";
+import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/Agregar" element={<FormularioProduc />} />
-        <Route path="/AgregarProd" element={<Agregar/>} />
-        <Route path="/ListarProd" element={<ListarProd />} />
-      </Routes>
-    </BrowserRouter>
-  );
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const [checking, setChecking] = useState(false);
+
+   useEffect(() => {
+      const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+         if (user?.uid) {
+            setIsLoggedIn(true);
+         } else {
+            setIsLoggedIn(false);
+         }
+         setChecking(false);
+      });
+   }, []);
+
+   if (checking) {
+      return <h1>Espere...</h1>;
+   }
+
+   return (
+      <BrowserRouter>
+         <Routes>
+            <Route
+               path="/"
+               element={
+                  <PublicRoute isAuthenticated={isLoggedIn}>
+                     <Login />
+                  </PublicRoute>
+               }
+            />
+
+            <Route path="/principal" element={<Principal />} />
+         </Routes>
+      </BrowserRouter>
+   );
 };
 
 export default AppRouter;

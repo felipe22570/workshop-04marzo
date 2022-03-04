@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { useForm } from "../hooks/useForm";
 import { editAsyn } from "../redux/actions/actionProducts";
 
-const EditarProd = ({ modal }) => {
+const EditarProds = ({ modal }) => {
    console.log(modal);
    const dispatch = useDispatch();
    const [show, setShow] = useState(true);
@@ -76,4 +76,4 @@ const EditarProd = ({ modal }) => {
    );
 };
 
-export default EditarProd;
+export default EditarProds;
