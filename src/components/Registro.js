@@ -1,8 +1,9 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useForm } from "../helpers/useForm";
 import { registroEmailPasswordNombre } from "../redux/actions/actionsRegistro";
-import "../styles/form.css";
+import "../styles/Form.css";
+
 const Registro = () => {
    const dispatch = useDispatch();
 
@@ -23,11 +24,12 @@ const Registro = () => {
    return (
       <div>
          <div>
-            <form id="formulario" onSubmit={handleSubmit}>
-               <h2 id="fieldset">Registrate</h2>
+            <form className="formulario" id="formulario" onSubmit={handleSubmit}>
+               <h2 className="fieldset">Registrate</h2>
                <div>
-                  <label>Nombre</label>
+                  <label className="label">Nombre</label>
                   <input
+                     className="input"
                      name="nombre"
                      value={nombre}
                      onChange={handleInputChange}
@@ -35,8 +37,9 @@ const Registro = () => {
                   />
                </div>
                <div>
-                  <label>Correo</label>
+                  <label className="label">Correo</label>
                   <input
+                     className="input"
                      type="email"
                      name="email"
                      value={email}
@@ -46,8 +49,9 @@ const Registro = () => {
                </div>
 
                <div>
-                  <label>Contraseña</label>
+                  <label className="label">Contraseña</label>
                   <input
+                     className="input"
                      type="password"
                      name="contraseña"
                      value={contraseña}
@@ -57,7 +61,7 @@ const Registro = () => {
                </div>
 
                <div>
-                  <button id="btn" type="submit">
+                  <button className="btn" type="submit">
                      Enviar
                   </button>
                </div>

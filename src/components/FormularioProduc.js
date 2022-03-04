@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fileUploas } from "../helpers/FileUploads";
 import { useForm } from "../helpers/useForm";
 import { addAsyn } from "../redux/actions/actionProducts";
-import "../styles/form.css";
+import "../styles/Form.css";
 
 const FormularioProduc = () => {
    const dispatch = useDispatch();
@@ -44,24 +44,46 @@ const FormularioProduc = () => {
    return (
       <div>
          <div>
-            <form id="formulario" onSubmit={handleSubmit}>
-               <h2 id="fieldset">Registra un Producto</h2>
+            <form className="formulario" onSubmit={handleSubmit}>
+               <h2 className="fieldset">Registra un Producto</h2>
                <div>
-                  <label>Código</label>
-                  <input name="codigo" value={codigo} onChange={handleInputChange} />
+                  <label className="label">Código</label>
+                  <input
+                     className="input"
+                     name="codigo"
+                     value={codigo}
+                     onChange={handleInputChange}
+                  />
                </div>
                <div>
-                  <label>Nombre</label>
-                  <input type="text" name="nombre" value={nombre} onChange={handleInputChange} />
+                  <label className="label">Nombre</label>
+                  <input
+                     className="input"
+                     type="text"
+                     name="nombre"
+                     value={nombre}
+                     onChange={handleInputChange}
+                  />
                </div>
 
                <div>
-                  <label>Precio</label>
-                  <input name="precio" value={precio} onChange={handleInputChange} />
+                  <label className="label">Precio</label>
+                  <input
+                     className="input"
+                     name="precio"
+                     value={precio}
+                     onChange={handleInputChange}
+                  />
                </div>
                <div>
-                  <label>Imagen</label>
-                  <input type="file" name="imagen" value={imagen} onChange={handleFileChange} />
+                  <label className="label">Imagen</label>
+                  <input
+                     className="input"
+                     type="file"
+                     name="imagen"
+                     value={imagen}
+                     onChange={handleFileChange}
+                  />
                </div>
 
                <div>
@@ -75,7 +97,7 @@ const FormularioProduc = () => {
                   <option value="XL">XL</option>
                </select> */}
                <div>
-                  <button id="btn" type="submit">
+                  <button className="btn" type="submit">
                      Enviar
                   </button>
                </div>

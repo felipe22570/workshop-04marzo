@@ -65,7 +65,14 @@ const EditarProd = ({ modal }) => {
                      <Button variant="secondary" onClick={handleClose}>
                         Close
                      </Button>
-                     <Button type="submit" variant="primary" onClick={handleClose}>
+                     <Button
+                        type="submit"
+                        variant="primary"
+                        onClick={() => {
+                           handleClose();
+                           handleSubmit();
+                        }}
+                     >
                         Save Changes
                      </Button>
                   </Form>
