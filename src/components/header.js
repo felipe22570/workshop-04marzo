@@ -5,6 +5,7 @@ import Buscador from './Buscador'
 import foto1 from "../assets/images/bolsa-de-la-compra.png"
 import foto2 from "../assets/images/buscando.png"
 import foto3 from "../assets/images/perfil-del-usuario (1).png"
+import logout from "../assets/images/logout.png"
 const Header = () => {
   return (
     <div>
@@ -18,10 +19,16 @@ const Header = () => {
         <Nav.Link><img src={foto2} width={40}/></Nav.Link>
         <Nav.Link ><img src={foto3} width={40}/></Nav.Link>
         <NavDropdown title="Lenguage" id="basic-nav-dropdown">
+
           <NavDropdown.Item href="#action/3.1">ES</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">EN</NavDropdown.Item>
         </NavDropdown>
          
+        <ul className="navbar-nav" id="lista">
+      <li class="lista">
+  <button className="nav-link" ><img src={logout} width={40}/></button>
+       </li>
+        </ul>
       </Nav>
     </Navbar.Collapse>
   </Container>

@@ -8,7 +8,7 @@ export const ContLogin = styled.div`
 
    width: 50%;
    margin: auto auto auto auto;
-   border: 1px solid black;
+  
    gap: 40px;
    padding: 50px;
 
@@ -20,17 +20,21 @@ export const ContLogin = styled.div`
 
       input {
          width: 100%;
-         height: 5vh;
+         height: 7vh;
+         border: 1px solid #ccc;
+         border-radius: 5px ;
       }
 
       button {
          border: none;
          border-radius: 5px;
-         background-color: teal;
-         color: white;
+         background-color: blanchedalmond;
+         color: black;
+         font-weight: bold ;
          width: 100%;
          height: 8vh;
          cursor: pointer;
+         box-shadow: 5px 3px 6px gainsboro;
       }
    }
 `;
@@ -44,7 +48,9 @@ export const ButtonGoogle = styled.button`
    gap: 1rem;
    border-radius: 5px;
    cursor: pointer;
-
+   border-style: none ;
+   background-color: whitesmoke ;
+   box-shadow: 5px 3px 6px gainsboro;
    img {
       width: 2rem;
    }

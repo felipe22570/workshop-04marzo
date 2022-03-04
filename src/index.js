@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import AppRouter from "./routers/AppRouter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
-import { store } from "./redux/store/store";
+import { store } from "./Redux/store/store";
 // import FormularioProduc from "./components/FormularioProduc";
 ReactDOM.render(
    <Provider store={store}>

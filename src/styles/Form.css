@@ -4,7 +4,7 @@
 
 * {margin: 0; padding: 0;}
 
-#formulario{
+.formulario{
     width: 80%;
 	margin: 50px auto;
 	text-align: center;
@@ -20,7 +20,7 @@ body {
 	font-family: montserrat, arial, verdana;
 }
 
-#formulario #fieldset{
+.formulario .fieldset{
 	background: white;
 	border: 0 none;
 	border-radius: 3px;
@@ -31,22 +31,22 @@ body {
 }
 
 
-button{
+.btn{
 	width: 100px;
-	background: black;
-	font-weight: bold;
-	color: white;
-	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
-    box-shadow: 5px 3px 6px darkslategrey;
-    border-radius: 5px;
+	background: black !important;
+	font-weight: bold !important;
+	color: white !important;
+	border: 0 none !important;
+	border-radius: 1px !important;
+	cursor: pointer !important;
+	padding: 10px 5px !important;
+	margin: 10px 5px !important;
+    box-shadow: 5px 3px 6px darkslategrey !important;
+    border-radius: 5px !important;
 }
 
 
-input{
+.input{
    margin-bottom: 15px;
    margin-left: 20px;
    padding: 10px;
@@ -59,7 +59,7 @@ input{
 }
 
 
-label{
+.label{
     width: 80px;
     display: inline-block;
    

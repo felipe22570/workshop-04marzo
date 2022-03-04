@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useForm } from "../helpers/useForm";
-import { loginEmailPassword, loginGoogle } from "../redux/actions/actionsLoginAsync";
+import { loginEmailPassword, loginGoogle } from "../Redux/actions/actionsLoginAsync";
 
 import { ButtonGoogle, ContLogin } from "../styles/loginStyle";
 

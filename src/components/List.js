@@ -25,7 +25,7 @@ const List = () => {
                {products.map((element, index) => (
                   <tr key={index}>
                      <td>{element.codigo}</td>
-                     <td className="imagen">{element.imagen}</td>
+                     <td><img className="imagen"  width={80} height={80} src={element.imagen}/></td>
                      <td>{element.nombre}</td>
                      <td>{element.talla}</td>
                      <td>{element.precio}</td>
