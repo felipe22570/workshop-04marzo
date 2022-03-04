@@ -1,17 +1,13 @@
-export const fileUploas = async (file) =>{
+export const fileUpload = async (file) => {
+  const cloudUrl = "https://api.Cloudinary.com/v1_1/dilwbkj5s/image/upload";
+  const formData = new FormData();
+  formData.append("upload_preset", "EjercicioCRUD");
+  formData.append("file", file);
 
-    const cloudinaryURL = 'https://api.cloudinary.com/v1_1/danimel/upload'
-    const formData = new FormData()
-    formData.append('upload_preset', 'JardinFront8')
-    formData.append('file', file)
-
- const resp = await fetch(cloudinaryURL, {
-     method: 'POST',
-     body: formData
-
- })
-
- const cloudinaryResp = await resp.json();
- return cloudinaryResp.secure_url
-
-}
+  const resp = await fetch(cloudUrl, {
+    method: "POST",
+    body: formData,
+  });
+  const cloudResp = await resp.json();
+  return cloudResp.secure_url;
+};

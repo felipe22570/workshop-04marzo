@@ -1,19 +1,19 @@
 import { typesProducts } from "../types/types";
 
 const initialState = {
-    products: []
+    productos: []
 }
 
 export const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case typesProducts.add:
             return {
-               products: [action.payload]
+               productos: [action.payload]
             }
 
         case typesProducts.list:
             return {
-                products: [...action.payload]
+                productos: [...action.payload]
 
             }
 
@@ -24,7 +24,7 @@ export const productsReducer = (state = initialState, action) => {
 
         case typesProducts.delete:
             return {
-               products: state.products.filter(pro => pro.codigo !== action.payload)
+               productos: state.productos.filter(pro => pro.codigo !== action.payload)
             }
 
         default:

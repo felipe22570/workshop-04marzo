@@ -3,7 +3,7 @@ import { Button, Form, Image } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../hooks/useForm';
 import { addAsyn } from '../Redux/actions/actionProducts'
-import { fileUploas } from '../helpers/FileUploads';
+import { fileUpload } from '../helpers/FileUploads';
 
 const Agregar = () => {
 
@@ -12,11 +12,10 @@ const Agregar = () => {
     let [values, handleInputChange, reset] = useForm({
        nombre: '',
        codigo: '',
-       descripcion: '', 
        precio: '',
        imagen: ''
-
     })
+
     const { nombre, codigo, precio, imagen } = values
 
     const handleSubmit =(e)=>{
@@ -27,7 +26,7 @@ const Agregar = () => {
     }
     const handleFileChange =(e)=>{
         const file = e.target.files[0]
-        fileUploas(file)
+        fileUpload(file)
             .then(resp =>{
                values.foto = resp
                 console.log(resp)
@@ -53,7 +52,7 @@ const Agregar = () => {
                     <Form.Control type="text" name="precio" placeholder="El precio en Pesos Colombiano" value={precio} onChange={handleInputChange} />
                 
                     <Form.Label>Imagen</Form.Label>
-                    <Form.Control type="file" name="foto" placeholder="Ingrese Foto.jpg" onChange={handleFileChange} />
+                    <Form.Control type="file" name="imagen" placeholder="Ingrese Foto.jpg" onChange={handleFileChange} />
                 
                 </Form.Group>
 

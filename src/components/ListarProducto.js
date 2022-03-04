@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Image, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteAsyn } from "../Redux/actions/actionProducts";
+import { deleteAsyn, listAsynProducts } from "../Redux/actions/actionProducts";
 import EditarProd from "./EditarProduct";
 
 const ListarProd = () => {
@@ -11,10 +11,11 @@ const ListarProd = () => {
   const [enviarDatosModal, setEnviarDatosModal] = useState([]);
 
   const { producto } = useSelector((store) => store.producto);
-
   console.log(producto);
 
-  useEffect(() => {}, [producto]);
+  useEffect(() => {
+
+  }, [producto])
 
   const editar = (codigo) => {
     const traerProducto = producto.find((t) => t.codigo === codigo);

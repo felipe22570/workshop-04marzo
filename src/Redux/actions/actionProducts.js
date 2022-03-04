@@ -7,7 +7,7 @@ import {
   query,
   updateDoc,
   where,
-} from "firebase/firestore";
+} from "@firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import { typesProducts } from "../types/types";
 
@@ -40,9 +40,9 @@ export const editSyn = (codigo, product) => {
 
 export const listAsynProducts = () => {
   return async (dispatch) => {
-    const traerDatos = await getDocs(collection(db, "productos"));
+    const querySnapshot = await getDocs(collection(db, "productos"));
     const productos = [];
-    traerDatos.forEach((doc) => {
+    querySnapshot.forEach((doc) => {
       productos.push({
         ...doc.data(),
       });
@@ -83,7 +83,7 @@ export const deleteSyn = (codigo) => {
 
 export const addAsyn = (newProduct) => {
   return (dispatch) => {
-    addDoc(collection(db, "productos"), newProduct)
+    addDoc(collection(db, "producto"), newProduct)
       .then((resp) => {
         dispatch(addSyn(newProduct));
         dispatch(listAsynProducts());
