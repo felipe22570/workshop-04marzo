@@ -40,7 +40,13 @@ const List = () => {
                   <tr key={index}>
                      <td>{element.codigo}</td>
                      <td>
-                        <img className="imagen" width={80} height={80} src={element.imagen} />
+                        <img
+                           className="imagen"
+                           width={80}
+                           height={80}
+                           src={element.imagen}
+                           alt=""
+                        />
                      </td>
                      <td>{element.nombre}</td>
                      <td>{element.talla}</td>
