@@ -1,25 +1,29 @@
+import { useFormik } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { useForm } from "../helpers/useForm";
 import { loginEmailPassword, loginGoogle } from "../Redux/actions/actionsLoginAsync";
-
+import * as Yup from "yup";
 import { ButtonGoogle, ContLogin } from "../styles/loginStyle";
+
 
 const Login = () => {
    const dispatch = useDispatch();
 
-   const [values, handleInputChange] = useForm({
-      email: "",
-      password: "",
+   const formik = useFormik({
+      initialValues: {
+         email: "",
+         password: "",
+      },
+      validationSchema: Yup.object({
+         email: Yup.string().email().required(),
+         password: Yup.string().required(),
+      }),
+      onSubmit: (data) => {
+         const { email, password } = data;
+         dispatch(loginEmailPassword(email, password));
+      },
    });
-
-   const { email, password } = values;
-
-   const handleLogin = (e) => {
-      e.preventDefault();
-      dispatch(loginEmailPassword(email, password));
-   };
 
    const handleGoogle = () => {
       dispatch(loginGoogle());
@@ -28,20 +32,18 @@ const Login = () => {
    return (
       <ContLogin>
          <h1>Login</h1>
-         <form onSubmit={handleLogin}>
+         <form onSubmit={formik.handleSubmit}>
             <input
                type="email"
                name="email"
-               value={email}
-               onChange={handleInputChange}
+               onChange={formik.handleChange}
                id=""
                placeholder="Ingresa tu usuario"
             />
             <input
                type="password"
                name="password"
-               value={password}
-               onChange={handleInputChange}
+               onChange={formik.handleChange}
                id=""
                placeholder="Ingresa tu contraseña"
             />

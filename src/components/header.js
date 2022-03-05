@@ -8,6 +8,7 @@ import foto3 from "../assets/images/perfil-del-usuario (1).png";
 import logout from "../assets/images/logout.png";
 import { useDispatch } from "react-redux";
 import { logoutAsync } from "../Redux/actions/actionsLoginAsync";
+import { Link } from "react-router-dom";
 const Header = () => {
    const dispatch = useDispatch();
 
@@ -26,8 +27,11 @@ const Header = () => {
                      <Nav.Link>
                         <img src={foto1} width={40} alt="" />
                      </Nav.Link>
+
                      <Nav.Link>
+                         <Link to="/search">
                         <img src={foto2} width={40} alt="" />
+                        </Link>
                      </Nav.Link>
                      <Nav.Link>
                         <img src={foto3} width={40} alt="" />

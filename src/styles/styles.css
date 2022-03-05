@@ -31,7 +31,7 @@ background-color: blanchedalmond;
     padding-left: 28px;
     height: 45px;
     border-radius: 10px;
-   
+    display: inline-block;
     margin-left: 4em;
     box-shadow: 2px 4px 2px gainsboro;
     margin-top: 2em;
@@ -50,6 +50,16 @@ background-color: blanchedalmond;
     margin-right: 2em;
 }
 
+
+.m-auto{
+  text-align: center;
+  color: sandybrown;
+  
+}
+
+.nose{
+    margin-top: 2em;
+}
 
 
 

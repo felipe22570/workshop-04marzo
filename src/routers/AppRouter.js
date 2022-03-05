@@ -4,12 +4,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../components/Login";
 import Principal from "../components/Principal";
 import Registro from "../components/Registro";
+import Search from "../components/Search";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
 const AppRouter = () => {
    const [isLoggedIn, setIsLoggedIn] = useState(false);
-   const [checking, setChecking] = useState(false);
+   const [checking, setChecking] = useState(true);
 
    useEffect(() => {
       const auth = getAuth();
@@ -38,17 +39,23 @@ const AppRouter = () => {
                   </PublicRoute>
                }
             />
-              <Route path="/registro" element={
-                    <PublicRoute isAuthenticated={isLoggedIn}>
-                    <Registro/>
-                    </PublicRoute> 
-                } />
+            <Route path="/registro" element={
+               <PublicRoute isAuthenticated={isLoggedIn}>
+                  <Registro />
+               </PublicRoute>
+            } />
 
             <Route path="/principal" element={
                <PrivateRoute isAuthenticated={isLoggedIn}>
                   <Principal />
                </PrivateRoute>
             } />
+ 
+         <Route path="/search" element={
+               <PrivateRoute isAuthenticated={isLoggedIn}>
+                  <Search/>
+               </PrivateRoute>
+            } /> 
          </Routes>
       </BrowserRouter>
    );
